@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="know_warp">
     <router-view></router-view>
     <Header />
+   
   </div>
 </template>
 
@@ -14,4 +15,8 @@ export default {
   }
 }
 </script>
-<style lang='stylus' rel='stylesheet/stylus'></style>
+<style lang='stylus' rel='stylesheet/stylus'>
+
+  
+
+</style>

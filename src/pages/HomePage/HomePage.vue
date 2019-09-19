@@ -3,25 +3,25 @@
     <router-view></router-view>
     <Header />
     <div class="wrapper">
-      <div style="padding-top:72px">
+      <div style="padding-top:72px; padding-bottom:200px">
         <!-- 轮播 -->
         <div class="home_conter">
           <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun01.jpg" alt />
+                <img class="central-list-top-img" src="../../commn/imgs/lun01.jpg" />
               </div>
               <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun02.jpg" alt />
+                <img class="central-list-top-img" src="../../commn/imgs/lun02.jpg" />
               </div>
               <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun03.jpg" alt />
+                <img class="central-list-top-img" src="../../commn/imgs/lun03.jpg" />
               </div>
               <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun04.jpg" alt />
+                <img class="central-list-top-img" src="../../commn/imgs/lun04.jpg" />
               </div>
               <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun05.jpg" alt />
+                <img class="central-list-top-img" src="../../commn/imgs/lun05.jpg" />
               </div>
             </div>
           </div>
@@ -92,21 +92,21 @@
           <span class="floor_header">— 新人专享礼 —</span>
           <div class="left">
             <span>新人专享礼包</span>
-            <img src="//yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png" alt />
+            <img src="//yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png" />
           </div>
           <div class="right1">
             <div class="right1_content">
               <p class="right1_title">福利社</p>
               <p class="right1_text">今日特价</p>
             </div>
-            <img src="https://yanxuan-item.nosdn.127.net/bb9025c24057dfb89403055ac5b9f85c.png" alt />
+            <img src="https://yanxuan-item.nosdn.127.net/bb9025c24057dfb89403055ac5b9f85c.png" />
           </div>
           <div class="right2">
             <div class="right2_content">
               <p class="right2_title">新人拼团</p>
               <p class="right2_text">1元起包邮</p>
             </div>
-            <img src="https://yanxuan-item.nosdn.127.net/bb9025c24057dfb89403055ac5b9f85c.png" alt />
+            <img src="https://yanxuan-item.nosdn.127.net/bb9025c24057dfb89403055ac5b9f85c.png" />
           </div>
         </div>
         <!-- 品牌制造 -->
@@ -137,7 +137,7 @@
           </div>
         </div>
         <!-- 类目热销榜 -->
-        <div class="home_gnmb">
+        <!-- <div class="home_gnmb">
           <div class="gnmb_header">
             <div class="gnmb_header_item item1">品牌制造商直供</div>
             <div class="gnmb_header_item item2">更多 ></div>
@@ -162,8 +162,81 @@
               </li>
             </ul>
           </div>
+        </div>-->
+        <!-- 新品尝鲜 -->
+
+        <div class="home_module">
+          <div class="module_digimg"></div>
+          <div class="home_wrapper">
+            <div class="module_list">
+              <div class="module_item">
+                <div class="item_img">
+                  <img
+                    src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png"
+                  />
+                </div>
+                <p>免洗式 乳酸菌冰沙睡眠面膜 100g</p>
+                <span style="color:red">￥69.9</span>
+              </div>
+              <div class="module_item">
+                <div class="item_img">
+                  <img
+                    src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png"
+                  />
+                </div>
+                <p>免洗式 乳酸菌冰沙睡眠面膜 100g</p>
+                <span style="color:red">￥69.9</span>
+              </div>
+              <div class="module_item">
+                <div class="item_img">
+                  <img
+                    src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png"
+                  />
+                </div>
+                <p>免洗式 乳酸菌冰沙睡眠面膜 100g</p>
+                <span style="color:red">￥69.9</span>
+              </div>
+              <div class="module_item">
+                <div class="item_img">
+                  <img
+                    src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png"
+                  />
+                </div>
+                <p>免洗式 乳酸菌冰沙睡眠面膜 100g</p>
+                <span style="color:red">￥69.9</span>
+              </div>
+              <div class="module_item">
+                <div class="item_img">
+                  <img
+                    src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png"
+                  />
+                </div>
+                <p>免洗式 乳酸菌冰沙睡眠面膜 100g</p>
+                <span style="color:red">￥69.9</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="jkl"></div>
+
+        <!-- 底部 -->
+        <div class="home_footer">
+          <div class="footer_content">
+            <div class="content_btn">
+              <div class="btn">
+                <span>下载APP</span>
+              </div>
+              <div class="btn">
+                <span>电脑版</span>
+              </div>
+            </div>
+            <div class="content_banquan">
+              <span>网易公司版权所有 © 1997-</span>
+              <span>2019</span>
+              <br />
+              <span>食品经营许可证：JY13301080111719</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -182,6 +255,12 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      new BScroll('.home_wrapper', {
+        startX: 0,
+        click: true,
+        scrollX: true,
+        scrollY: false
+      })
       new Swiper('.swiper-container', {
         pagination: {
           el: '.swiper-pagination'
@@ -379,15 +458,65 @@ export default {
             float left
             color #7f7f7f
             margin-left 70px
-  .home_module // 类目热销
+  .home_module // 新品尝鲜
+    width 100%
+    height 391px
+    // background #333
+    margin-top 100px
+    .module_digimg
+      height 188px
+      background #fff
+      background-image url('https://yanxuan.nosdn.127.net/2565b1fa18e4b8b64aad0710c9725aa1.jpg')
+      background-size 100% 100%
+    .module_list
+      width 600px
+      height 203px
+      display flex
+      background #fff
+      .module_item
+        width 100px
+        height 180px
+        background #fff
+        margin 12px 0 0 12px
+        img
+          width 100px
+          height 100px
+          background-color rgba(0, 0, 0, 0.05)
+  .home_footer // 底部
+    height 122px
+    background #333
+    padding 0.72rem 0.26667rem 0.37333rem
     position relative
-    height 356px
-    // background green
-    // margin-bottom 0.26667rem
-    .module_title
-      height 50px
-      // background blue
-</style>,
+    margin-top 10px
+    .footer_content
+      // background #fff
+      .content_btn
+        height 31px
+        background #7f7f77 f
+        display flex
+        .btn
+          width 86px
+          height 30px
+          margin-left 60px
+          // background green
+          text-align center
+          line-height 30px
+          border 1px solid #fff
+          border-radius 2px
+          span
+            color #fff
+    .content_banquan
+      height 32px
+      width 310px
+      // background green
+      position absolute
+      left 50%
+      bottom 20px
+      transform translateX(-155px)
+      text-align center
+      span
+        color #7f7f7f
+</style>
 <style lang="stylus">
 .swiper-pagination-bullet
   width 30px

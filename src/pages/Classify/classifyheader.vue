@@ -14,7 +14,7 @@ export default {}
 <style lang='stylus' rel='stylesheet/stylus'>
 @import '../../commn/stylus/mixins.styl'
 .classify_header
-  bottom-border-1px($bc)
+  bottom-border-1px(#000)
   width 100%
   height 50px
   display flex

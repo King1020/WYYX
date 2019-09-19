@@ -2,14 +2,14 @@
   <div class="know_warp">
     <!-- 头部 -->
     <div class="know_header">
-      <i class="iconfont iconhome"></i>
+      <i class="iconfont iconhome" @click="$router.push('/homepage')"></i>
       <div class="know_content">
         <div class="text">发现</div>
         <div class="text2">甄选家</div>
       </div>
       <div class="icon">
-        <i class="iconfont iconfangdajing"></i>
-        <i class="iconfont iconcart"></i>
+        <i class="iconfont iconfangdajing" @click="$router.push('/search')"></i>
+        <i class="iconfont iconcart" @click="$router.push('/shopcart')"></i>
       </div>
     </div>
     <!-- 推荐 -->

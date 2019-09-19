@@ -9,9 +9,10 @@ import Classify from '../pages/Classify/Classify.vue'
 import ShopCart from '../pages/ShopCart/ShopCart.vue'
 //个人中心
 import Person from '../pages/Person/Person.vue'
+// 搜索页面
+import Search from '../pages/HomePage/Search/Search.vue'
 // 配置路由
-export default [
-  {
+export default [{
     path: '/homepage',
     component: HomePage
   },
@@ -30,6 +31,10 @@ export default [
   {
     path: '/person',
     component: Person
+  },
+  {
+    path: '/search',
+    component: Search
   },
   {
     path: '/',

@@ -4,7 +4,7 @@
     <div class="home_header">
       <!-- logo图片 -->
       <img src="../../commn/imgs/logo.png" />
-      <div class="home_header_sou">
+      <div class="home_header_sou"  @click="$router.push('/search')">
         <i class="iconfont iconfangdajing"></i>
         <span class="placeholder">搜索商品,共22715款好物</span>
       </div>
@@ -60,7 +60,7 @@ export default {
         scrollY: false
       })
     })
-  }
+  },
 }
 </script>
 
@@ -102,7 +102,6 @@ export default {
       border-radius 7px
   .home_nav
     position relative
-    width 100%
     height 22px
     width 500px
     .home_list
@@ -131,5 +130,5 @@ export default {
     right 0
     top 50px
     width 50px
-    height 20px    
+    height 20px
 </style>
