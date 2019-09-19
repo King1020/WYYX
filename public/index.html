@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../src/commn/reset.css">
+  <link rel="stylesheet" href="../src/assets/icon/iconfont.css" />
+
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1416712_orucqamsth.css">
+  <title>网易严选</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html body{
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<script>
+  // document.addEventListener('touchmove', function (event) {
+  //   event.preventDefault();
+  // }, false);
+  window.onload = function () {
+    function remfiles() {
+      // 1.获取屏幕宽度
+      let clientWidth = document.documentElement.clientWidth
+      // 2.屏幕宽度等分 降低单位rem值得大小 提高精确度
+      let rem = clientWidth / 10
+      // 3.设置 根节点字体大小
+      document.documentElement.style.fontSize = rem + 'px'
+      // 4.给body设置字体大小
+      document.body.style.fontSize = '12px'
+    }
+    // 页面显示时
+    window.addEventListener('pageshow', function () {
+      remfiles()
+    })
+    // 页面大小发生改变
+    window.addEventListener('resize', function () {
+      remfiles()
+    })
+  }
+</script>
+
+</html>
