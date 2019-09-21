@@ -4,7 +4,7 @@
     <div class="home_header">
       <!-- logo图片 -->
       <img src="../../commn/imgs/logo.png" />
-      <div class="home_header_sou"  @click="$router.push('/search')">
+      <div class="home_header_sou" @click="$router.push('/search')">
         <i class="iconfont iconfangdajing"></i>
         <span class="placeholder">搜索商品,共22715款好物</span>
       </div>
@@ -16,29 +16,17 @@
     <div class="wrapper2">
       <div class="home_nav">
         <div class="home_list">
-          <div class="home_item xuan">
-            <span>推荐</span>
-          </div>
-          <div class="home_item">
-            <span>居家生活</span>
-          </div>
-          <div class="home_item">
-            <span>服饰鞋包</span>
-          </div>
-          <div class="home_item">
-            <span>美食酒水</span>
-          </div>
-          <div class="home_item">
-            <span>美食酒水</span>
-          </div>
-          <div class="home_item">
-            <span>美食酒水</span>
-          </div>
-          <div class="home_item">
-            <span>美食酒水</span>
-          </div>
+          <a
+            class="home_item"
+            :class="{xuan:xuan===index}"
+            @click="on(index)"
+            v-for="(item,index) in kingKongModule.kingKongList"
+            :key="index"
+            :href="item.schemeUrl"
+          >
+            <span>{{item.text}}</span>
+          </a>
         </div>
-        <div class="xuanzhong"></div>
       </div>
       <div class="home_icon">
         <i class="iconfont iconsanjiaoxing"></i>
@@ -50,8 +38,26 @@
 <script>
 // 滚动
 import BScroll from 'better-scroll'
+import { mapState } from 'vuex'
 export default {
+  data() {
+    return {
+      xuan: 0 //选中索引
+    }
+  },
+  methods: {
+    on(index) {
+      this.xuan = index
+    }
+  },
+  computed: {
+    // ...mapState(['kingKongModule'])
+    ...mapState({
+      kingKongModule:state=>state.carouse.kingKongModule
+    })
+  },
   mounted() {
+    this.$store.dispatch('getCarouse')
     this.$nextTick(() => {
       new BScroll('.wrapper2', {
         startX: 0,
@@ -60,7 +66,7 @@ export default {
         scrollY: false
       })
     })
-  },
+  }
 }
 </script>
 
@@ -106,22 +112,17 @@ export default {
     width 500px
     .home_list
       // width 500px
-      height 30px
+      height 22px
       white-space nowrap
       display flex
       justify-content space-around
       .home_item
         font-size 15px
         color #7f7f7f
+        text-decoration none
       .xuan
         color red
-    .xuanzhong
-      position absolute
-      bottom 0
-      // left 9px
-      width 43px
-      height 2px
-      background red
+        border-bottom 2px solid red
   .home_icon
     position fixed
     text-align center

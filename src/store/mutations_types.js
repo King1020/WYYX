@@ -1,0 +1,5 @@
+// 包含多个常量
+// home的数据
+export const KING_KONG_MODULE = 'kingKongModule'
+// 分类数据
+export const KING_GORY_LIST = 'categoryList'

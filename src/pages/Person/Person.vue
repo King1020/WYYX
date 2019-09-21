@@ -2,58 +2,92 @@
   <div class="person_warp">
     <!-- 头部 -->
     <div class="person_header">
-      <i class="iconfont iconhome"  @click="$router.push('/homepage')"></i>
+      <i class="iconfont iconhome" @click="$router.push('/homepage')"></i>
       <img src="../../commn/imgs/logo.png" alt />
       <div class="person_icon">
         <i class="iconfont iconfangdajing" @click="$router.push('/search')"></i>
         <i class="iconfont iconcart" @click="$router.push('/shopcart')"></i>
       </div>
     </div>
-    <!-- 严选logo -->
-    <div class="person_logo">
-      <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt />
-    </div>
-    <!-- 按钮 -->
-    <div class="person_btn">
-      <div class="btn_01">
-        <span class="btn_icon01"></span>
-        <span class="btn_text01">手机号快捷登录</span>
+    <!-- 头部以下 -->
+    <div class="person_content" v-show="isCotent">
+      <!-- 严选logo -->
+      <div class="person_logo">
+        <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt />
       </div>
-      <div class="btn_02">
-        <span class="btn_icon02"></span>
-        <span class="btn_text01">邮箱账号登录</span>
-      </div>
-    </div>
-    <!-- footerlist -->
-    <div class="person_footer">
-      <div class="footer_warp">
-        <div class="warp_item">
-          <i class="iconfont iconweixin"></i>
-          <span class="text">微信 </span>
+      <!-- 按钮 -->
+      <div class="person_btn">
+        <div class="btn_01" @click="changeShow">
+          <span class="btn_icon01"></span>
+          <span class="btn_text01">手机号快捷登录</span>
         </div>
-        <div class="shugang"></div>
-        <div class="warp_item">
-          <i class="iconfont iconqq1"></i>
-          <span class="text">QQ </span>
-        </div>
-        <div class="shugang"></div>
-        <div class="warp_item">
-          <i class="iconfont iconweibo2"></i>
-          <span class="text">微博 </span>
+        <div class="btn_02" @click="changeShow2">
+          <span class="btn_icon02"></span>
+          <span class="btn_text01">邮箱账号登录</span>
         </div>
       </div>
+      <!-- footerlist -->
+      <div class="person_footer">
+        <div class="footer_warp">
+          <div class="warp_item">
+            <i class="iconfont iconweixin"></i>
+            <span class="text">微信</span>
+          </div>
+          <div class="shugang"></div>
+          <div class="warp_item">
+            <i class="iconfont iconqq1"></i>
+            <span class="text">QQ</span>
+          </div>
+          <div class="shugang"></div>
+          <div class="warp_item">
+            <i class="iconfont iconweibo2"></i>
+            <span class="text">微博</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <router-view></router-view>
+    <Login v-show="islogin"/>
+    <Elogin v-show="isElogin" />
   </div>
 </template>
 
 <script>
-export default {}
+import Login from './Login/Login'
+import Elogin from './E_mail_login/E_login'
+export default {
+  data() {
+    return {
+      isCotent: true,//主页
+      islogin: false,//手机号快捷登录
+      isElogin:false//邮箱账号登录
+    }
+  },
+  methods: {
+    //显示手机号登陆
+    changeShow() {
+      this.isCotent = false,
+      this.islogin =true
+    },
+    //显示邮箱登录
+    changeShow2() {
+      this.isCotent = false
+      this.isElogin = true
+    }
+  },
+  components: {
+    Login,
+    Elogin
+  }
+}
 </script>
 Classify
-<style lang='stylus' rel='stylesheet/stylus'>
+<style lang='stylus' rel='stylesheet/stylus' scoped>
+@import '../../commn/stylus/mixins.styl'
 .person_warp
   background #f2f5f4
   .person_header
+    bottom-border-1px(#333)
     display flex
     width 100%
     height 44px
@@ -146,18 +180,18 @@ Classify
       justify-content space-around
       padding 0 30px
       position relative
-      bottom -190px    
+      bottom -190px
       .warp_item
         .iconfont
           color #7f7f7f
         .text
           text-align center
           line-height 25px
-          margin-left 5px 
+          margin-left 5px
           color #7f7f7f
           font-size 15px
       .shugang
         width 1px
         height 20px
-        background #7f7f7f    
+        background #7f7f7f
 </style>

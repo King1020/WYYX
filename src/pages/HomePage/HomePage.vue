@@ -8,20 +8,8 @@
         <div class="home_conter">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun01.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun02.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun03.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun04.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img class="central-list-top-img" src="../../commn/imgs/lun05.jpg" />
+              <div class="swiper-slide" v-for="(item,index) in focusList" :key="index">
+                <img class="central-list-top-img" :src="item.picUrl" />
               </div>
             </div>
           </div>
@@ -30,61 +18,17 @@
         <!-- 48小时退款 -->
         <div class="home_policy">
           <ul class="grow">
-            <li class="item">
-              <img src="../../commn/imgs/1568695945.png" alt />
-              <span class="text">网易自营品牌</span>
-            </li>
-            <li class="item">
-              <img src="../../commn/imgs/1568695945.png" alt />
-              <span class="text">网易自营品牌</span>
-            </li>
-            <li class="item">
-              <img src="../../commn/imgs/1568695945.png" alt />
-              <span class="text">网易自营品牌</span>
+            <li class="item" v-for="(king,index) in policyDescList":key='index'>
+              <img :src="king.icon"/>
+              <span class="text">{{king.desc}}</span>
             </li>
           </ul>
         </div>
         <!-- 导航栏 -->
         <div class="home_slide">
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
-          </li>
-          <li class="silde_li">
-            <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-            <span>新品发售</span>
+          <li class="silde_li" v-for="(kiss,index) in kingKongList":key='index' >
+            <img :src="kiss.picUrl" alt />
+            <span>{{kiss.text}}</span>
           </li>
         </div>
         <!-- 新人专享 -->
@@ -249,9 +193,17 @@ import Header from '../../components/Header/Header'
 import BScroll from 'better-scroll'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
+import { mapState } from 'vuex'
 export default {
   components: {
     Header
+  },
+  computed: {
+    ...mapState({
+      focusList:state=>state.carouse.focusList,
+      policyDescList:state=>state.carouse.policyDescList,
+      kingKongList:state=>state.carouse.kingKongList
+    })
   },
   mounted() {
     this.$nextTick(() => {
@@ -265,9 +217,9 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         },
-        // autoplay: {
-        //   delay: 2000 //2秒切换一次
-        // },
+        autoplay: {
+          delay: 2000 //2秒切换一次
+        },
         // 无缝轮播
         loop: true,
         bulletClass: 'my-bullet' //需设置.my-bullet样式
@@ -290,6 +242,37 @@ export default {
   width 100%
   background #ededed
   position relative
+  // .home_nav
+  //   position relative
+  //   height 22px
+  //   width 500px
+  //   .home_list
+  //     // width 500px
+  //     height 30px
+  //     white-space nowrap
+  //     display flex
+  //     justify-content space-around
+  //     .home_item
+  //       font-size 15px
+  //       color #7f7f7f
+  //     .xuan
+  //       color red
+  //   .xuanzhong
+  //     position absolute
+  //     bottom 0
+  //     // left 9px
+  //     width 43px
+  //     height 2px
+  //     background red
+  .home_icon
+    position fixed
+    text-align center
+    line-height 20px
+    background #fff
+    right 0
+    top 50px
+    width 50px
+    height 20px
   .home_conter // 轮播
     position relative
     background #fff
@@ -311,18 +294,19 @@ export default {
     background #fff
     vertical-align middle
     .grow
+      height 36px
       display flex
       flex 1
       align-items center
       vertical-align middle
       list-style none
-      margin 15px 0
       .item
         line-height 18px
         margin-left 15px
         height 18px
         vertical-align middle
         img
+          display inline-block
           width 18px
           height 18px
         .text
