@@ -8,8 +8,8 @@
         <div class="home_conter">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="(item,index) in focusList" :key="index">
-                <img class="central-list-top-img" :src="item.picUrl" />
+              <div class="swiper-slide" v-for="(odd,index) in focusList" :key="index">
+                <img class="central-list-top-img" :src="odd.picUrl" />
               </div>
             </div>
           </div>
@@ -18,15 +18,15 @@
         <!-- 48小时退款 -->
         <div class="home_policy">
           <ul class="grow">
-            <li class="item" v-for="(king,index) in policyDescList":key='index'>
-              <img :src="king.icon"/>
+            <li class="item" v-for="(king,index) in policyDescList" :key="index">
+              <img :src="king.icon" />
               <span class="text">{{king.desc}}</span>
             </li>
           </ul>
         </div>
         <!-- 导航栏 -->
         <div class="home_slide">
-          <li class="silde_li" v-for="(kiss,index) in kingKongList":key='index' >
+          <li class="silde_li" v-for="(kiss,index) in kingKongList" :key="index">
             <img :src="kiss.picUrl" alt />
             <span>{{kiss.text}}</span>
           </li>
@@ -189,7 +189,7 @@
 <script>
 // 头部导航栏
 import Header from '../../components/Header/Header'
-// 滚动
+// 滑动
 import BScroll from 'better-scroll'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
@@ -200,12 +200,13 @@ export default {
   },
   computed: {
     ...mapState({
-      focusList:state=>state.carouse.focusList,
-      policyDescList:state=>state.carouse.policyDescList,
-      kingKongList:state=>state.carouse.kingKongList
+      focusList: state => state.carouse.focusList,
+      policyDescList: state => state.carouse.policyDescList,
+      kingKongList: state => state.carouse.kingKongList
     })
   },
-  mounted() {
+  async mounted() {
+    await this.$store.dispatch('getCarouse')
     this.$nextTick(() => {
       new BScroll('.home_wrapper', {
         startX: 0,
@@ -242,28 +243,6 @@ export default {
   width 100%
   background #ededed
   position relative
-  // .home_nav
-  //   position relative
-  //   height 22px
-  //   width 500px
-  //   .home_list
-  //     // width 500px
-  //     height 30px
-  //     white-space nowrap
-  //     display flex
-  //     justify-content space-around
-  //     .home_item
-  //       font-size 15px
-  //       color #7f7f7f
-  //     .xuan
-  //       color red
-  //   .xuanzhong
-  //     position absolute
-  //     bottom 0
-  //     // left 9px
-  //     width 43px
-  //     height 2px
-  //     background red
   .home_icon
     position fixed
     text-align center
@@ -326,6 +305,8 @@ export default {
       width 70px
       height 75px
       margin 5px
+      justify-content space-between
+      color #7f7f7f
       img
         width 55px
         height 55px

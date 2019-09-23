@@ -44,7 +44,7 @@
     </div>
     <!-- 登录按钮 -->
     <div class="shop_btn">
-      <span class="btn_text">登录</span>
+      <span class="btn_text" @click="$router.push('/person')">登录</span>
     </div>
   </div>
 </template>

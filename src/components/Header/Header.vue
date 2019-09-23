@@ -9,7 +9,7 @@
         <span class="placeholder">搜索商品,共22715款好物</span>
       </div>
       <div class="home_header_deng">
-        <span class="btn">登录</span>
+        <span class="btn" @click="$router.push('/person')">登录</span>
       </div>
     </div>
     <!-- 推荐 -->
@@ -51,13 +51,12 @@ export default {
     }
   },
   computed: {
-    // ...mapState(['kingKongModule'])
     ...mapState({
       kingKongModule:state=>state.carouse.kingKongModule
     })
   },
   mounted() {
-    this.$store.dispatch('getCarouse')
+  //  await this.$store.dispatch('getCarouse')
     this.$nextTick(() => {
       new BScroll('.wrapper2', {
         startX: 0,

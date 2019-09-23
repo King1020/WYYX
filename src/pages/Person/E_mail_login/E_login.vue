@@ -6,10 +6,30 @@
     <div class="E_container">
       <div class="E_from">
         <section class="E_message">
-          <input type="text" placeholder="邮箱账号" />
+          <input
+            type="text"
+            placeholder="邮箱账号"
+            v-model="email"
+            name="email"
+            v-validate="'required|email'"
+          />
+          <span
+            style="color:red; 
+            display: block;
+            margin-top: -15px"
+            v-show="errors.has('email')"
+            class="help is-danger"
+          >{{ errors.first('email') }}</span>
         </section>
         <section class="E_password">
-          <input type="password" placeholder="密码" />
+          <input type="password" placeholder="密码" v-model="pwd" name="pwd" v-validate="'required|pwd'" />
+          <span
+            style="color:red; 
+            display: block;
+            margin-top: -15px"
+            v-show="errors.has('pwd')"
+            class="help is-danger"
+          >{{ errors.first('pwd') }}</span>
         </section>
         <!-- 注册账号 -->
         <div class="E_sigon">
@@ -19,7 +39,7 @@
           </div>
         </div>
         <!-- 登录按钮 -->
-        <div class="btn_01" >
+        <div class="btn_01">
           <span class="btn_icon01"></span>
           <span class="btn_text01">登录</span>
         </div>
@@ -30,7 +50,14 @@
 
 <script>
 import { Field } from 'mint-ui'
-export default {}
+export default {
+  data() {
+    return {
+      email: '', //邮箱账号
+      pwd: '' //密码
+    }
+  }
+}
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'scoped>
@@ -87,7 +114,7 @@ export default {}
         width 336px
         height 138px
         .sigon_content
-          margin 10px
+          margin-top 25px
           display flex
           justify-content space-between
           color #7f7f7f

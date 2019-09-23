@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from './router'
 // 引入store
 import store from './store/index'
+// 引入表单验证
+import './validate'
 import Mint from 'mint-ui';
 import './mock/index'
 Vue.use(Mint);
@@ -15,3 +17,4 @@ new Vue({
   router, //注册路由器
   store //注册仓库
 }).$mount('#app')
+ 

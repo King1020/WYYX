@@ -19,7 +19,7 @@ const mutations = {
     state.focusList = data.focusList
     state.policyDescList = data.policyDescList
     state.kingKongList = data.kingKongModule.kingKongList
-    console.log(data);
+    // console.log(data);
   }
 }
 const actions = {

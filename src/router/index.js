@@ -8,6 +8,6 @@ import routes from './routes'
 Vue.use(VueRouter)
 // 配置路由
 export default new VueRouter({
-  mode: 'history', //地址栏不出先#符号
+  mode: 'history', //地址栏不出现#符号
   routes
 })

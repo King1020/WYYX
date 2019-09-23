@@ -9,9 +9,7 @@
 </template>
 
 <script>
-// 头部导航栏
-// import Header from './components/Header/Header'
-// import {reqCarousel} from './api/index'//测试
+import {reqCarousel,reqClassify,reqSearch,reqSearchList} from './api/index'//测试
 // 底部导航栏
 import Footer from './components/Footer/Footer'
 export default {
@@ -20,9 +18,12 @@ export default {
   },
  async mounted() {
   //  测试
-    // const result = await reqCarousel()
+    // const result = await reqSearch('1')
     // console.log(result)
-    this.$store.dispatch('getcalssify')
+    // const result = await reqSearchList()
+    // console.log(result)
+    // this.$store.dispatch('getcalssify')
+
   },
 }
 </script>
