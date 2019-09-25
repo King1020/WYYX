@@ -6,6 +6,8 @@ import Vuex from 'vuex'
 import carouse from './modules/carouse'
 import classify from './modules/classify'
 import search from './modules/search'
+// 识物页面
+import know from './modules/know'
 // 引入相关配置
 // import actions from './actions'
 // import mutations from './mutations'
@@ -19,6 +21,7 @@ export default new Vuex.Store({
     // 存放多个模块
     carouse,
     classify,
-    search
+    search,
+    know
   }
 })

@@ -9,3 +9,6 @@ export const KING_SEARCH = 'kingsearch'
 
 // 搜索默认显示
 export const KING_SEARCH_LIST = 'kingsearchlist'
+
+// 识物页面导航
+export const KING_KNOW_LIST ='kingknowlist'

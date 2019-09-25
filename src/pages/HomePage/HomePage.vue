@@ -3,7 +3,7 @@
     <router-view></router-view>
     <Header />
     <div class="wrapper">
-      <div style="padding-top:72px; padding-bottom:200px">
+      <div style="padding-top:72px; padding-bottom:50px">
         <!-- 轮播 -->
         <div class="home_conter">
           <div class="swiper-container">
@@ -18,9 +18,13 @@
         <!-- 48小时退款 -->
         <div class="home_policy">
           <ul class="grow">
-            <li class="item" v-for="(king,index) in policyDescList" :key="index">
-              <img :src="king.icon" />
-              <span class="text">{{king.desc}}</span>
+            <li class="item" 
+            style="
+            display: flex;
+            align-items: center;" 
+            v-for="(king,index) in policyDescList" :key="index">
+              <img :src="king.icon"/>
+              <span class="text" style="margin-top: 2px;">{{king.desc}}</span>
             </li>
           </ul>
         </div>
@@ -80,33 +84,6 @@
             </ul>
           </div>
         </div>
-        <!-- 类目热销榜 -->
-        <!-- <div class="home_gnmb">
-          <div class="gnmb_header">
-            <div class="gnmb_header_item item1">品牌制造商直供</div>
-            <div class="gnmb_header_item item2">更多 ></div>
-          </div>
-          <div class="gnmb_content">
-            <ul class="content_list">
-              <li class="content_item">
-                <p>新秀丽制造商</p>
-                <span>159元起</span>
-              </li>
-              <li class="content_item">
-                <p>新秀丽制造商</p>
-                <span>159元起</span>
-              </li>
-              <li class="content_item">
-                <p>新秀丽制造商</p>
-                <span>159元起</span>
-              </li>
-              <li class="content_item">
-                <p>新秀丽制造商</p>
-                <span>159元起</span>
-              </li>
-            </ul>
-          </div>
-        </div>-->
         <!-- 新品尝鲜 -->
 
         <div class="home_module">
@@ -162,25 +139,7 @@
           </div>
         </div>
 
-        <!-- 底部 -->
-        <div class="home_footer">
-          <div class="footer_content">
-            <div class="content_btn">
-              <div class="btn">
-                <span>下载APP</span>
-              </div>
-              <div class="btn">
-                <span>电脑版</span>
-              </div>
-            </div>
-            <div class="content_banquan">
-              <span>网易公司版权所有 © 1997-</span>
-              <span>2019</span>
-              <br />
-              <span>食品经营许可证：JY13301080111719</span>
-            </div>
-          </div>
-        </div>
+        <Footer />
       </div>
     </div>
   </div>
@@ -189,6 +148,8 @@
 <script>
 // 头部导航栏
 import Header from '../../components/Header/Header'
+// 底部
+import Footer from './footer/footer'
 // 滑动
 import BScroll from 'better-scroll'
 import Swiper from 'swiper'
@@ -196,7 +157,8 @@ import 'swiper/dist/css/swiper.css'
 import { mapState } from 'vuex'
 export default {
   components: {
-    Header
+    Header,
+    Footer
   },
   computed: {
     ...mapState({
@@ -423,6 +385,7 @@ export default {
             float left
             color #7f7f7f
             margin-left 70px
+            margin-top 5px
   .home_module // 新品尝鲜
     width 100%
     height 391px
@@ -447,40 +410,6 @@ export default {
           width 100px
           height 100px
           background-color rgba(0, 0, 0, 0.05)
-  .home_footer // 底部
-    height 122px
-    background #333
-    padding 0.72rem 0.26667rem 0.37333rem
-    position relative
-    margin-top 10px
-    .footer_content
-      // background #fff
-      .content_btn
-        height 31px
-        background #7f7f77 f
-        display flex
-        .btn
-          width 86px
-          height 30px
-          margin-left 60px
-          // background green
-          text-align center
-          line-height 30px
-          border 1px solid #fff
-          border-radius 2px
-          span
-            color #fff
-    .content_banquan
-      height 32px
-      width 310px
-      // background green
-      position absolute
-      left 50%
-      bottom 20px
-      transform translateX(-155px)
-      text-align center
-      span
-        color #7f7f7f
 </style>
 <style lang="stylus">
 .swiper-pagination-bullet

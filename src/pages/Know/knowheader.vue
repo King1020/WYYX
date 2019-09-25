@@ -15,14 +15,15 @@
     <!-- 推荐 -->
     <div class="wrapper3">
       <div class="know_nav">
-        <div class="know_list">
-          <div class="know_item xuan">
-            <span>家装节</span>
+        <div class="know_list" style="height:22px">
+          <div 
+          class="know_item" 
+          :class="{xuan:path===index}"
+          @click="on(index)"
+          v-for="(item,index) in knowlist" :key='index'>
+            <span>{{item.text}}</span>
           </div>
-          <div class="know_item">
-            <span>推荐</span>
-          </div>
-          <div class="know_item">
+          <!-- <div class="know_item">
             <span>好货内部价</span>
           </div>
           <div class="know_item">
@@ -39,9 +40,8 @@
           </div>
           <div class="know_item">
             <span>HOME</span>
-          </div>
+          </div> -->
         </div>
-        <div class="xuanzhong"></div>
       </div>
     </div>
   </div>
@@ -50,14 +50,32 @@
 <script>
 // 滚动
 import BScroll from 'better-scroll'
+// vuex
+import {mapState} from 'vuex'
 export default {
-  mounted() {
+  data() {
+    return {
+      path: 0 //点击对应索引
+    }
+  },
+  computed: {
+    ...mapState({
+      knowlist: state => state.know.knowlist
+    })
+  },
+  methods: {
+    on(index) {
+      this.path = index
+    }
+  },
+ async mounted() {
+  //  分发
+    await this.$store.dispatch('getknowList')
     this.$nextTick(() => {
       new BScroll('.wrapper3', {
         startX: 0,
         click: true,
-        scrollX: true,
-        // scrollY: false
+        scrollX: true
       })
     })
   }
@@ -103,7 +121,10 @@ export default {
     position absolute
     right 50px
 .know_nav
-  position relative
+  position fixed
+  z-index 9
+  background #fff
+  padding-top -22px
   width 100%
   height 22px
   width 500px
@@ -115,13 +136,8 @@ export default {
       font-size 15px
       color #7f7f7f
       margin-left 1px
+      margin 1px 0 
     .xuan
       color red
-  .xuanzhong
-    position absolute
-    bottom 0
-    left 8px
-    width 45px
-    height 2px
-    background red
+      border-bottom 2px solid red
 </style>

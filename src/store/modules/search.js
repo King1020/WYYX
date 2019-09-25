@@ -14,13 +14,13 @@ const mutations = {
   // 搜索
   [KING_SEARCH](state, Searchdata) {
     state.Searchdata = Searchdata
-    console.log(Searchdata);
+    // console.log(Searchdata);
     
   },
   // 搜索默认显示
   [KING_SEARCH_LIST](state, Navlist) {
     state.Navlist = Navlist
-    console.log(Navlist)
+    // console.log(Navlist)
   }
 }
 const actions = {

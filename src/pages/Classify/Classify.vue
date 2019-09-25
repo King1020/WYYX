@@ -14,14 +14,24 @@
         >{{item.name}}</li>
         <!-- categoryList[clickId].subCateList -->
       </ul>
-      <!-- <div class="active"></div> -->
     </div>
     <!-- 右侧 -->
-    <div class="classify_right">
-      <div class="right_banner">
-        <img src="https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg" />
+    <!-- 轮播 -->
+    <div class class="right_banner">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(odd,index) in categoryList" :key="index">
+            <img class="central-list-top-img" :src="odd.bannerUrl" />
+          </div>
+        </div>
       </div>
-      <div class="wrapperMax">
+      <!-- 翻页器 -->
+      <div 
+      class="swiper-pagination" style="margin-top: -15px;backgournd: #333"></div>
+    </div>
+
+    <div class="classify_right">
+      <div>
         <div class="right_list">
           <div class="right_item" v-for="(odd,index) in kingArr" :key="index">
             <img :src="odd.wapBannerUrl" />
@@ -36,8 +46,10 @@
 <script>
 // 头部导航栏
 import Header from './classifyheader'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.css'
 // 滑动
-import BScroll from 'better-scroll'
+// import BScroll from 'better-scroll'
 import { mapState } from 'vuex'
 export default {
   data() {
@@ -58,21 +70,24 @@ export default {
   computed: {
     ...mapState({
       categoryList: state => state.classify.categoryList
-    }),
-    
+    })
   },
   async mounted() {
     await this.$store.dispatch('getcalssify')
     //初始化结束页面默认显示
     this.kingArr = this.categoryList[0].subCateList
-    //滑动
-      new BScroll('wrapperMax', {
-        startX: 0,
-        click: true,
-        scrollX: true,
-        scrollY: false
-      })
-   
+
+    new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      autoplay: {
+        // delay: 2000 //2秒切换一次
+      },
+      // 无缝轮播
+      loop: true,
+      bulletClass: 'my-bullet' //需设置.my-bullet样式
+    })
   }
 }
 </script>
@@ -93,20 +108,12 @@ export default {
         border-left 2px solid red
   .classify_right
     width 75%
-    height 437px
     position absolute
     right 0
     top 65px
-    // background #7f7f7f
-    .right_banner
-      width 265px
-      height 96px
-      // background #fff
-      padding-bottom 10px
-      img
-        width 265px
-        height 96px
     .right_list
+      position relative
+      top 100px
       width 264px
       display flex
       flex-wrap wrap
@@ -116,7 +123,19 @@ export default {
         height 90px
         padding-left 12px
         text-align center
+        font-size 12px
+        color #7f7f7f
       img
         width 72px
         height 72px
+  .right_banner
+    position absolute
+    right 12px
+    top 60px
+    width 265px
+    height 96px
+    padding-bottom 10px
+    img
+      width 265px
+      height 96px
 </style>

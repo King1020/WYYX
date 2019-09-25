@@ -1,6 +1,6 @@
 <template>
   <div class="classify_header">
-    <div class="classify_header_sou">
+    <div class="classify_header_sou" @click="$router.push('/search')">
       <i class="iconfont iconfangdajing"></i>
       <span class="placeholder">搜索商品,共22698款好物</span>
     </div>
@@ -35,13 +35,4 @@ export default {}
     .placeholder
       color #7f7f7f
       font-size 15px
-
-  // .home_header_deng
-  //   text-align center
-  //   line-height 20px
-  //   width 40px
-  //   height 20px
-  //   border 1px solid red
-  //   margin-left 10px
-  //   border-radius 7px
 </style>

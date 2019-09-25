@@ -31,15 +31,15 @@
             name="code"
             v-validate="'required|code'"
           />
-          <span 
+          <span
             style="   
               border: 1px solid #7f7f7f;
               border-radius: 3px;
               padding: 0 5px;
               vertical-align: middle;
               color: #7F7F81;
-              margin-left: 45px;" 
-               >短信验证码</span>
+              margin-left: 45px;"
+          >短信验证码</span>
           <span
             style="color:red; 
             display: block;
@@ -54,11 +54,28 @@
             <span>遇到问题？</span>
             <span>使用密码验证登录</span>
           </div>
+          <!-- 对勾 -->
+          <span class="duigou">
+            <input class="icon_" type="checkbox" />
+          </span>
+          <div class="xieyi">
+            <label>
+              <span>我同意</span>
+              <a href="https://reg.163.com/agreement_mobile_wap.shtml?v=20171127">《服务条款》</a>
+              <span>和</span>
+              <a href="https://reg.163.com/agreement_mobile_ysbh_wap.shtml?v=20171127">《网易隐私政策》</a>
+            </label>
+          </div>
         </div>
         <!-- 登录按钮 -->
         <div class="btn_01">
           <span class="btn_icon01"></span>
           <span class="btn_text01">登录</span>
+        </div>
+        <!-- 其他登录方式 -->
+        <div class="footer">
+          <span>其他登录方式</span>
+          <i class="iconfont iconyoujiantou"></i>
         </div>
       </div>
     </div>
@@ -77,10 +94,10 @@ export default {
     }
   },
   computed: {
-    isRightPhone(){
+    isRightPhone() {
       return /[1]\d{10}/.test(this.phone)
     }
-  },
+  }
 }
 </script>
 
@@ -142,6 +159,15 @@ export default {
           display flex
           justify-content space-between
           color #7f7f7f
+        .duigou
+          .icon_
+            width 15px
+            height 20px
+            margin-top 70px
+        .xieyi
+          margin -17px 0px 0px 20px
+          a
+            color blue
       .btn_01
         width 335px
         height 45px
@@ -155,4 +181,9 @@ export default {
         .btn_text01
           color burlywood
           font-size 16px
+      .footer
+        font-size 15px
+        text-align center
+        position relative
+        top -50px
 </style>

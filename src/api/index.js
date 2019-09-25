@@ -12,3 +12,6 @@ export const reqSearch = (keywordPrefix) => ajax(`${KISS}/xhr/search/searchAutoC
 })
 // 搜索默认显示
 export const reqSearchList = () => ajax( `${KISS}/xhr/search/init.json`)
+
+// 识物页面头部导航
+export const reqKnowHeaderList = () => ajax('/know')

@@ -1,5 +1,4 @@
-[
-  {
+[{
     "imgUrl": "//nos.netease.com/yanxuan/f0d0e1a542e2095861b42bf789d948ce.jpg",
     "showIndex": 0,
     "superCategoryId": 0,
@@ -7,12 +6,11 @@
     "name": "居家",
     "id": 1005000,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1005000,
         "level": "L2",
-        "wapBannerUrl": "http://yanxuan.nosdn.127.net/65a7ae2867d891a241dd8291a9037c84.png",
+        "wapBannerUrl": "//yanxuan.nosdn.127.net/65a7ae2867d891a241dd8291a9037c84.png",
         "bannerUrl": "",
         "name": "床品件套",
         "id": 1008009,
@@ -169,8 +167,7 @@
     "name": "鞋包配饰",
     "id": 1008000,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1008000,
         "level": "L2",
@@ -384,8 +381,7 @@
     "name": "服装",
     "id": 1010000,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 2,
         "superCategoryId": 1010000,
         "level": "L2",
@@ -756,12 +752,11 @@
     "imgUrl": "//nos.netease.com/yanxuan/369bfa3656be0771e62b79d181b4433b.jpg",
     "showIndex": 0,
     "superCategoryId": 0,
-    "bannerUrl": "//nos.netease.com/yanxuan/369bfa3656be0771e62b79d181b4433b.jpg",
+    "bannerUrl": "//https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg",
     "name": "电器",
     "id": 1043000,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1043000,
         "level": "L2",
@@ -837,8 +832,7 @@
     "name": "洗护",
     "id": 1013001,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1013001,
         "level": "L2",
@@ -997,8 +991,7 @@
     "name": "饮食",
     "id": 1005002,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1005002,
         "level": "L2",
@@ -1281,8 +1274,7 @@
     "name": "餐厨",
     "id": 1005001,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1005001,
         "level": "L2",
@@ -1396,8 +1388,7 @@
     "name": "婴童",
     "id": 1011000,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1011000,
         "level": "L2",
@@ -1613,8 +1604,7 @@
     "name": "文体",
     "id": 1019000,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1019000,
         "level": "L2",
@@ -1879,8 +1869,7 @@
     "name": "特色区",
     "id": 1065000,
     "type": 0,
-    "subCateList": [
-      {
+    "subCateList": [{
         "showIndex": 1,
         "superCategoryId": 1065000,
         "level": "L2",

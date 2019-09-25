@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import {reqCarousel,reqClassify,reqSearch,reqSearchList} from './api/index'//测试
+// import {reqCarousel,reqClassify,reqSearch,reqSearchList,reqKnowHeaderList} from './api/index'//测试
 // 底部导航栏
 import Footer from './components/Footer/Footer'
 export default {
@@ -21,6 +21,8 @@ export default {
     // const result = await reqSearch('1')
     // console.log(result)
     // const result = await reqSearchList()
+    // console.log(result)
+    // const result = await reqKnowHeaderList()
     // console.log(result)
     // this.$store.dispatch('getcalssify')
 
